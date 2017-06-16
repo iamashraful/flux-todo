@@ -3,6 +3,8 @@
  */
 
 import EventEmitter from 'events';
+import dispatcher from '../dispatcher';
+
 
 class TodoStore extends EventEmitter {
     constructor() {
@@ -17,19 +19,19 @@ class TodoStore extends EventEmitter {
             {
                 id: 2,
                 text: 'Create REACT App',
-                isCompleted: false,
+                isCompleted: true,
                 isInProgress: false
             }
         ]
     }
 
     // Feature for creating new todo
-    createTodo(text) {
+    createTodo(text, isCom=false) {
         const id = Date.now();
         this.todos.push({
             id,
             text,
-            isCompleted: false,
+            isCompleted: isCom,
             isInProgress: false
         });
 
@@ -41,8 +43,19 @@ class TodoStore extends EventEmitter {
     getAll() {
         return this.todos;
     }
+
+    handleActions(action) {
+        switch(action.type){
+            case "CREATE_TODO":
+                this.createTodo(action.text);
+                break;
+            default:
+                console.log('No specified action');
+        }
+    }
 }
 
 const todoStore = new TodoStore();
-window.todoStore = todoStore;
+dispatcher.register(todoStore.handleActions.bind(todoStore));
+window.dispatcher = dispatcher;
 export default todoStore;

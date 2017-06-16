@@ -25,7 +25,10 @@ class App extends Component {
         const {todos} = this.state;  // get the todos state and copy to todos
         const TodoComponent = todos.map((todo) => {
             // return Todo component and send item as props
-            return <Todo item={todo.text} key={todo.id}/>
+            if(todo.isCompleted)
+                return <del><Todo item={todo.text} key={todo.id}/></del>
+            else
+                return <Todo item={todo.text} key={todo.id}/>
         });
 
         return (
