@@ -2,8 +2,8 @@
  * Created by ashraful on 6/13/17.
  */
 
-import EventEmitter from 'events';
-import dispatcher from '../dispatcher';
+import EventEmitter from "events";
+import dispatcher from "../dispatcher";
 
 
 class TodoStore extends EventEmitter {
@@ -26,7 +26,7 @@ class TodoStore extends EventEmitter {
     }
 
     // Feature for creating new todo
-    createTodo(text, isCom=false) {
+    createTodo(text, isCom = false) {
         const id = Date.now();
         this.todos.push({
             id,
@@ -45,7 +45,7 @@ class TodoStore extends EventEmitter {
     }
 
     handleActions(action) {
-        switch(action.type){
+        switch (action.type) {
             case "CREATE_TODO":
                 this.createTodo(action.text);
                 break;
