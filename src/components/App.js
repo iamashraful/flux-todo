@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import TodoStore from '../store/TodoStore';
 import * as TodoActions from "../actions/TodoActions";
 import Todo from './Todo';
+import InputForm from './InputForm';
 import "../assets/css/App.css";
 
 class App extends Component {
@@ -40,11 +41,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>TODO Application</h1>
-                <input className="todo-input" placeholder="Write here..."/>
-                <br/> <br/>
-                <button onClick={this.createTodo.bind(this)}>Create</button>
-                <br/> <br/>
-                <button>Delete</button>
+                <InputForm/>
 
                 <div className="todo">
                     {TodoComponent}
