@@ -26,7 +26,7 @@ class InputForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input className="todo-input" placeholder="Write here..."/>
+                <input className="todo-input" placeholder="Write here..." onChange={this.updateState}/>
             </form>
         )
     }
