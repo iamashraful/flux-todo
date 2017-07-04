@@ -26,13 +26,13 @@ class TodoStore extends EventEmitter {
     }
 
     // Feature for creating new todo
-    createTodo(text, isCom = false) {
+    createTodo(text, isCom = false, isInp=false) {
         const id = Date.now();
         this.todos.push({
             id,
             text,
             isCompleted: isCom,
-            isInProgress: false
+            isInProgress: isInp
         });
 
         // Response to components for store change

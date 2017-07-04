@@ -29,3 +29,11 @@
 	text-align: left;
 	line-height: 1.5;
 }
+
+.error {
+	border-bottom: #ff231e 1px solid;
+}
+
+.error-text {
+    color: #ff4850;
+}
