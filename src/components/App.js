@@ -24,13 +24,8 @@ class App extends Component {
         });
     }
 
-    createTodo(value) {
-        // This is very static. Will make it dynamic from React form.
-        TodoActions.createTodo(value);
-    }
-
     getTask(val) {
-        this.createTodo(val);
+        TodoActions.createTodo(val);
     }
 
     render() {

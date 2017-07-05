@@ -21,7 +21,10 @@ class InputForm extends Component {
     handleSubmit(event) {
         const value = this.state.value;
         if (value.length <= 0) {
-            this.setState({errorMessage: 'Empty submission is not allowed!!'})
+            this.setState({errorMessage: 'Empty submission is not allowed!!'});
+        }
+        else if (value.length < 5) {
+            this.setState({errorMessage: 'Too small keyword may not understandable!!'});
         }
         else {
             this.setState({errorMessage: ''});
