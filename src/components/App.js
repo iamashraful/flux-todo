@@ -43,8 +43,8 @@ class App extends Component {
                 <div className="app-nav">
                     <h1>TODO Application</h1>
                     <InputForm getTask={this.getTask.bind(this)}/>
-                    <Navbar/>
                 </div>
+                <Navbar className="todo-navbar"/>
 
 
                 <div className="todo">

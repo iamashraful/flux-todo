@@ -11,6 +11,9 @@
 }
 
 .nav-content {
+    position: fixed;
+    margin-top: 8%;
+    width: 50%;
     margin-left: 25%;
     margin-right: 25%;
 }

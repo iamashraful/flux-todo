@@ -4,7 +4,9 @@
 
 import EventEmitter from "events";
 import dispatcher from "../dispatcher";
-
+import AllTask from '../components/AllTask';
+import InProgressTask from '../components/InProgressTask';
+import CompletedTask from '../components/CompletedTask';
 
 class TodoStore extends EventEmitter {
     constructor() {
@@ -22,7 +24,27 @@ class TodoStore extends EventEmitter {
                 isCompleted: true,
                 isInProgress: false
             }
-        ]
+        ];
+        this.navItems = [
+            {
+                id: 1,
+                text: 'All',
+                url: '/all',
+                component: AllTask
+            },
+            {
+                id: 2,
+                text: 'In Progress',
+                url: '/in-progress',
+                component: InProgressTask
+            },
+            {
+                id: 3,
+                text: 'Completed',
+                url: '/completed',
+                component: CompletedTask
+            },
+        ];
     }
 
     // Feature for creating new todo
