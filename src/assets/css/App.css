@@ -4,41 +4,46 @@
 }
 
 .app-nav {
-	position: fixed;
-	width: 100%;
-	top: 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
     background-color: white;
 }
 
+.nav-content {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
 .todo-input {
-	height: 45px;
-	width: 50%;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 1px solid black;
-	font-size: 24px;
-	text-align: center;
+    height: 45px;
+    width: 50%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid black;
+    font-size: 24px;
+    text-align: center;
 }
 
 .todo-input:focus {
-	outline-color: transparent;
+    outline-color: transparent;
 }
 
 .todo {
-	margin-top: 15%;
-	margin-left: 25%;
-	margin-right: 25%;
+    margin-top: 15%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
-.todo li{
-	list-style-type: none;
-	text-align: left;
-	line-height: 1.5;
+.todo li {
+    list-style-type: none;
+    text-align: left;
+    line-height: 1.5;
 }
 
 .error {
-	border-bottom: #ff231e 1px solid;
+    border-bottom: #ff231e 1px solid;
 }
 
 .error-text {
