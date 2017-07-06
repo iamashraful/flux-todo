@@ -10,7 +10,7 @@ class AllTask extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos: TodoStore.getAll(),
+            todos: TodoStore.getAllTasks(),
         }
     }
 
@@ -18,13 +18,14 @@ class AllTask extends Component {
         // This function will fire up when store will change
         TodoStore.on("change", () => {
             this.setState({
-                todos: TodoStore.getAll()
+                todos: TodoStore.getAllTasks()
             });
         });
     }
 
     render() {
         const {todos} = this.state;  // get the todos state and copy to todos
+        console.log(todos);
         const TodoComponent = todos.map((todo) => {
             if (todo.isCompleted)
                 return <del><Todo item={todo.text} key={todo.id}/></del>;
@@ -34,7 +35,7 @@ class AllTask extends Component {
 
         return (
             <div className="todo">
-                {TodoComponent}
+                {todos.length > 0 ? TodoComponent:<p>No Tasks Found</p>}
             </div>
         )
     }

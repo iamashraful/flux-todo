@@ -10,7 +10,7 @@ class CompletedTask extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos: TodoStore.getAll(),
+            todos: TodoStore.getCompletedTasks(),
         }
     }
 
@@ -18,7 +18,7 @@ class CompletedTask extends Component {
         // This function will fire up when store will change
         TodoStore.on("change", () => {
             this.setState({
-                todos: TodoStore.getAll()
+                todos: TodoStore.getCompletedTasks()
             });
         });
     }
@@ -34,7 +34,7 @@ class CompletedTask extends Component {
 
         return (
             <div className="todo">
-                {TodoComponent}
+                {todos.length > 0 ? TodoComponent:<p>No Tasks Found</p>}
             </div>
         )
     }

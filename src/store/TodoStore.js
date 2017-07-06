@@ -21,8 +21,8 @@ class TodoStore extends EventEmitter {
             {
                 id: 2,
                 text: 'Create REACT App',
-                isCompleted: true,
-                isInProgress: false
+                isCompleted: false,
+                isInProgress: true
             }
         ];
         this.navItems = [
@@ -62,8 +62,30 @@ class TodoStore extends EventEmitter {
     }
 
     // get all todos
-    getAll() {
+    getAllTasks() {
         return this.todos;
+    }
+
+    // get in progress todos
+    getInProgressTasks() {
+        let todos = [];
+        this.todos.forEach(function (item) {
+            if(item.isInProgress) {
+                todos.push(item);
+            }
+        });
+        return todos;
+    }
+
+    // get in completed todos
+    getCompletedTasks() {
+        let todos = [];
+        this.todos.forEach(function (item) {
+            if(item.isCompleted) {
+                todos.push(item);
+            }
+        });
+        return todos;
     }
 
     handleActions(action) {
