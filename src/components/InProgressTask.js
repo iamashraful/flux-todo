@@ -34,7 +34,7 @@ class InProgressTask extends Component {
 
         return (
             <div className="todo">
-                {todos.length > 0 ? TodoComponent:<p>No Tasks Found</p>}
+                {todos.length > 0 ? TodoComponent:<p>You are not dealing with any task.</p>}
             </div>
         )
     }

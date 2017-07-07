@@ -34,7 +34,7 @@ class CompletedTask extends Component {
 
         return (
             <div className="todo">
-                {todos.length > 0 ? TodoComponent:<p>No Tasks Found</p>}
+                {todos.length > 0 ? TodoComponent:<p>You haven't any completed task.</p>}
             </div>
         )
     }
