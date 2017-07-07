@@ -25,7 +25,6 @@ class InProgressTask extends Component {
 
     render() {
         const {todos} = this.state;  // get the todos state and copy to todos
-        console.log(todos);
         const TodoComponent = todos.map((todo) => {
             if (todo.isCompleted)
                 return <del><Todo item={todo.text} key={todo.id}/></del>;

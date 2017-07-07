@@ -8,6 +8,9 @@ import "../assets/css/App.css";
 class App extends Component {
     getTask(val) {
         TodoActions.createTodo(val);
+        // A little bit hard coded. But tricky and workable. This is simple to understand.
+        // When to task is created and state will navigate to all
+        window.location = '/#/all';
     }
 
     render() {
