@@ -45,7 +45,7 @@ class InputForm extends Component {
                     className={cssClass}
                     placeholder="Write here..."
                     onChange={this.updateState}
-                    {/* Based on added status value will be changed */}
+                    // Based on added status value will be changed
                     value={this.props.added ? '':this.state.value}
                 />
                 <p className="error-text">{this.state.errorMessage}</p>

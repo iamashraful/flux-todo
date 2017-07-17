@@ -39,7 +39,7 @@ class App extends Component {
                     <InputForm
                         getTask={this.getTask.bind(this)}
                         newStatus={this.setStatus.bind(this)}
-                        {/* Sending added=true/false if false then input box remain same. */}
+                        // Sending added=true/false if false then input box remain same.
                         added={this.state.isAdded}
                     />
                 </div>
