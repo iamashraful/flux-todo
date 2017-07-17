@@ -8,6 +8,7 @@
     width: 100%;
     top: 0;
     background-color: white;
+    z-index: 1;
 }
 
 .nav-content {
@@ -16,6 +17,7 @@
     width: 50%;
     margin-left: 25%;
     margin-right: 25%;
+    z-index: 1;
 }
 
 .todo-input {
@@ -43,6 +45,10 @@
     list-style-type: none;
     text-align: left;
     line-height: 1.5;
+}
+
+.list-item {
+    line-height: 2;
 }
 
 .error {
