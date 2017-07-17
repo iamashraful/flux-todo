@@ -1,6 +1,6 @@
 ## A simple TODO Application using React and Flux
 
-###How to run?
+### How to run?
 - Fork this repo
 - clone from your fork
 - `$ git checkout develop` (Switch to develop if you need latest)
