@@ -21,10 +21,20 @@ class Todo extends Component {
             );
         const progressText = this.props.item.isInProgress ? "In Progress" : "Progress";
 
+        const isCompletedButtonClass = "btn btn-sm " + (
+                this.props.item.isCompleted ? "btn-danger" : "btn-outline-danger"
+            );
+        const completedText = this.props.item.isCompleted ? "Completed" : "Complete";
+
+        // InProgress button will be disabled when task is completed
+        const isDisabled = this.props.item.isCompleted;
+
+
         return (
             <div className="row list-item">
                 <div className="col-md-2 col-sm-2">
                     <button
+                        disabled={isDisabled}
                         className={inProgressButtonClass}
                         onClick={this.handleTask.bind(this, this.props.item)}>
                         {progressText}
@@ -34,7 +44,9 @@ class Todo extends Component {
                     {this.props.item.text}
                 </div>
                 <div className="col-md-2 col-sm-2">
-                    <button className="btn btn-sm btn-outline-danger">Complete</button>
+                    <button className={isCompletedButtonClass}>
+                        {completedText}
+                    </button>
                 </div>
             </div>
         )

@@ -23,6 +23,12 @@ class TodoStore extends EventEmitter {
                 text: 'Create REACT App',
                 isCompleted: false,
                 isInProgress: true
+            },
+            {
+                id: 3,
+                text: 'Finish up quickly',
+                isCompleted: true,
+                isInProgress: false
             }
         ];
         this.navItems = [
