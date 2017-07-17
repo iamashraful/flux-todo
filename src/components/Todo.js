@@ -28,10 +28,13 @@ class Todo extends Component {
 
         // InProgress button will be disabled when task is completed
         const isDisabled = this.props.item.isCompleted;
+        const topRowClass = "row list-item " + (
+                this.props.item.isCompleted ? "css-del" : ""
+            );
 
 
         return (
-            <div className="row list-item">
+            <div className={topRowClass}>
                 <div className="col-md-2 col-sm-2">
                     <button
                         disabled={isDisabled}

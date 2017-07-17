@@ -51,6 +51,10 @@
     line-height: 2;
 }
 
+.css-del {
+    text-decoration: line-through;
+}
+
 .error {
     border-bottom: #ff231e 1px solid;
 }
