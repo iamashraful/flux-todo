@@ -11,6 +11,13 @@ export function createTodo(text) {
     });
 }
 
+export function updateTodo(id) {
+    dispatcher.dispatch({
+        type: "UPDATE_TODO",
+        id
+    });
+}
+
 export function deleteTodo(id) {
     dispatcher.dispatch({
         type: "DELETE_TODO",

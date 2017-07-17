@@ -26,10 +26,7 @@ class AllTask extends Component {
     render() {
         const {todos} = this.state;  // get the todos state and copy to todos
         const TodoComponent = todos.map((todo) => {
-            if (todo.isCompleted)
-                return <del><Todo item={todo.text} key={todo.id}/></del>;
-            else
-                return <Todo item={todo.text} key={todo.id}/>
+            return <Todo item={todo} key={todo.id}/>
         });
 
         return (

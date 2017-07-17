@@ -61,6 +61,11 @@ class TodoStore extends EventEmitter {
         this.emit("change");
     }
 
+    // Feature for updating todo
+    updateTodo(id, text, isCom, isInp) {
+
+    }
+
     // get all todos
     getAllTasks() {
         return this.todos;
