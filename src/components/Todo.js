@@ -3,6 +3,7 @@
  */
 
 import React, {Component} from "react";
+import * as TodoActions from "../actions/TodoActions";
 
 class Todo extends Component {
     constructor(props) {
@@ -10,8 +11,9 @@ class Todo extends Component {
         this.state = {}
     }
 
-    handleTask(task) {
-        console.log(task);
+    handleProgress(task) {
+        const progress = !task.isInProgress;
+        TodoActions.updateTodo(task.id, task.text, task.isCompleted, progress)
     }
 
     render() {
@@ -39,7 +41,7 @@ class Todo extends Component {
                     <button
                         disabled={isDisabled}
                         className={inProgressButtonClass}
-                        onClick={this.handleTask.bind(this, this.props.item)}>
+                        onClick={this.handleProgress.bind(this, this.props.item)}>
                         {progressText}
                     </button>
                 </div>

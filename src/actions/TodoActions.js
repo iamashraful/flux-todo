@@ -11,10 +11,13 @@ export function createTodo(text) {
     });
 }
 
-export function updateTodo(id) {
+export function updateTodo(id, text, isCom, isInp) {
     dispatcher.dispatch({
         type: "UPDATE_TODO",
-        id
+        id,
+        text,
+        isCom,
+        isInp
     });
 }
 
