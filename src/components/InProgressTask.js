@@ -17,8 +17,9 @@ class InProgressTask extends Component {
     componentWillMount() {
         // This function will fire up when store will change
         TodoStore.on("change", () => {
+            const inProgressTasks = TodoStore.getInProgressTasks();
             this.setState({
-                todos: TodoStore.getInProgressTasks()
+                todos: inProgressTasks
             });
         });
     }

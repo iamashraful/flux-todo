@@ -17,8 +17,9 @@ class AllTask extends Component {
     componentWillMount() {
         // This function will fire up when store will change
         TodoStore.on("change", () => {
+            const allTasks = TodoStore.getAllTasks();
             this.setState({
-                todos: TodoStore.getAllTasks()
+                todos: allTasks
             });
         });
     }
