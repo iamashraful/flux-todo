@@ -17,7 +17,7 @@ class CompletedTask extends Component {
     componentWillMount() {
         // This function will fire up when store will change
         TodoStore.on("change", () => {
-            const completedTasks = TodoStore.getCompletedTasks()
+            const completedTasks = TodoStore.getCompletedTasks();
             this.setState({
                 todos: completedTasks
             });
