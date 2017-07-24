@@ -16,6 +16,11 @@ class Todo extends Component {
         TodoActions.updateTodo(task.id, task.text, task.isCompleted, progress)
     }
 
+    handleComplete(task) {
+        const completetionStatus = !task.isCompleted;
+        TodoActions.updateTodo(task.id, task.text, completetionStatus, task.isInProgress)
+    }
+
     render() {
         // Inline constants
         const inProgressButtonClass = "btn btn-sm " + (
@@ -49,7 +54,9 @@ class Todo extends Component {
                     {this.props.item.text}
                 </div>
                 <div className="col-md-2 col-sm-2">
-                    <button className={isCompletedButtonClass}>
+                    <button
+                        className={isCompletedButtonClass}
+                        onClick={this.handleComplete.bind(this, this.props.item)}>
                         {completedText}
                     </button>
                 </div>
