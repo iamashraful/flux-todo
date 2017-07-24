@@ -18,7 +18,7 @@ class Todo extends Component {
 
     handleComplete(task) {
         const completetionStatus = !task.isCompleted;
-        TodoActions.updateTodo(task.id, task.text, completetionStatus, task.isInProgress)
+        TodoActions.updateTodo(task.id, task.text, completetionStatus, false)
     }
 
     render() {
